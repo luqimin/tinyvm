@@ -1,0 +1,40 @@
+{
+    "name": "velocity",
+    "displayName": "tinyVM",
+    "description": "java velocity support",
+    "version": "0.0.1",
+    "publisher": "luqimin",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/luqimin/tinylight-vscode"
+    },
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "velocity",
+            "aliases": ["Velocity", "velocity"],
+            "extensions": [".vm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "velocity",
+            "scopeName": "text.velocity",
+            "path": "./syntaxes/Velocity.tmLanguage"
+        }, {
+            "language": "velocity",
+            "scopeName": "text.html.velocity",
+            "path": "./syntaxes/Velocity_HTML.tmLanguage"
+        }]
+    },
+    "keywords": [
+        "velocity",
+        "vm",
+        "java",
+        "template"
+    ]
+}
