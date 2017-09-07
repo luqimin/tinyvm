@@ -39,6 +39,12 @@
                 "scopeName": "text.html.velocity",
                 "path": "./syntaxes/Velocity_HTML.tmLanguage"
             }
+        ],
+        "snippets": [
+            {
+                "language": "velocity",
+                "path": "./snippets/snippets.json"
+            }
         ]
     },
     "keywords": [

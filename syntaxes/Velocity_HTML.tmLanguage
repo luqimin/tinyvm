@@ -8,13 +8,6 @@
 	</array>
 	<key>foldingStartMarker</key>
 	<string>(?x)
-		(
-		\#(?:
-			    (?:macro|if|foreach)\b \s* \(
-			|\{ (?:macro|if|foreach)\b \s* \(
-		).*(?!\#\{?end).*$
-		)
-		| # Copied from HTML
 		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl)\b.*?&gt;
 		|&lt;!--(?!.*--\s*&gt;)
 		|^&lt;!--\ \#tminclude\ (?&gt;.*?--&gt;)$
@@ -24,10 +17,6 @@
 		)</string>
 	<key>foldingStopMarker</key>
 	<string>(?x)
-		(\#end\b|\#\{end)
-		
-		
-		| # Copied from HTML
 		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl)&gt;
 		|^(?!.*?&lt;!--).*?--\s*&gt;
 		|^&lt;!--\ end\ tminclude\ --&gt;$
@@ -52,6 +41,35 @@
 		<dict>
 			<key>include</key>
 			<string>#leading-space</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>&lt;!-{2,3}</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>-{2,3}?\s*&gt;</string>
+			<key>name</key>
+			<string>comment.block.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>--</string>
+					<key>name</key>
+					<string>invalid.illegal.bad-comments-or-CDATA.html</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#embedded-code</string>
+				</dict>
+			</array>
 		</dict>
 	</array>
 	<key>repository</key>

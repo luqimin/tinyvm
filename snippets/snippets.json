@@ -1,0 +1,273 @@
+{
+	"count": {
+		"prefix": "count",
+		"body": "\n\\$velocityCount\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"dateFormat": {
+		"prefix": "dateFormat",
+		"body": "\n\\$date.format( \"${1:format}\" , ${0:date} )\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"dd.MM.yyyy":{
+		"prefix": "dd.MM.yyyy",
+		"body": "dd.MM.yyyy",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"dd.MM.yyyy - HH:mm:ss":{
+		"prefix": "dd.MM.yyyy - HH:mm:ss",
+		"body": "dd.MM.yyyy - HH:mm:ss",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"yyyy-MM-dd":{
+		"prefix": "yyyy-MM-dd",
+		"body": "yyyy-MM-dd",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"yyyy-MMM-dd":{
+		"prefix": "yyyy-MMM-dd",
+		"body": "yyyy-MMM-dd",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"el": {
+		"prefix": "el",
+		"body": "#else${0} ##",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"exist": {
+		"prefix": "exist",
+		"body": "\\$include.exists( \"${0:filepath}\" )",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"foreach": {
+		"prefix": "#foreach",
+		"body": "#foreach(${1:item} in ${2:Array})\r\n\t${0}\r\n#end",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"include": {
+		"prefix": "#include",
+		"body": "#include(${1:content})",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"param": {
+		"prefix": "param",
+		"body": "\\$!{request.getParameter( \"${1:parameter name}\" )}",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"vm": {
+		"prefix": "vm",
+		"body": "#!vm;utf-8",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"host": {
+		"prefix": "host",
+		"body": "\\$!{link.getHost()}",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"!": {
+		"prefix": "<!--",
+		"body": "<!-- ${0} -->",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"ifelse": {
+		"prefix": "#ifelse",
+		"body": "#if(${1:condition})\r\n\t${2}\r\n#else\r\n\t${0}\r\n#end",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"if": {
+		"prefix": "#if",
+		"body": "#if(${1:condition})\r\n\t${0}\r\n#end",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"ept": {
+		"prefix": "ept",
+		"body": "\nisEmpty()\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"isfeature": {
+		"prefix": "isfeature",
+		"body": "\n\\$_userAgent.isFeaturePhone()\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"issmart": {
+		"prefix": "issmart",
+		"body": "\n\\$_userAgent.isSmartPhone()\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"isweb": {
+		"prefix": "isweb",
+		"body": "\n\\$_userAgent.isWeb()\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"console": {
+		"prefix": "console",
+		"body": "\n<script>console.log( ${0} )</script>\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"request": {
+		"prefix": "request",
+		"body": "\n\\$_json.request( ${0:url} )\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"jstos": {
+		"prefix": "jstos",
+		"body": "\n\\$_json.toString( ${0:obj} )\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	".ks": {
+		"prefix": ".ks",
+		"body": "\n.keySet()\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"+": {
+		"prefix": "+",
+		"body": "\\$math.add( \\$${1:number}, ${0:\\$number} )",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"/": {
+		"prefix": "/",
+		"body": "\\$math.div( \\$${1:number}, ${0:\\$number} )",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"*": {
+		"prefix": "*",
+		"body": "\\$math.mul( \\$${1:number}, ${0:\\$number} )",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"-": {
+		"prefix": "-",
+		"body": "\\$math.sub( \\$${1:number}, ${0:\\$number} )",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"par": {
+		"prefix": "#parse",
+		"body": "#parse( \"${0:url}\" )",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"read": {
+		"prefix": "read",
+		"body": "$_reader.read( \"${0:file}\" )",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"redi": {
+		"prefix": "redi",
+		"body": "\n\\$response.setStatus(${1:301})\n\\$response.sendRedirect(\"${2:\\$${0:var}}\")\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"set": {
+		"prefix": "#set",
+		"body": "#set(\\$${1:var} = ${0:valor})",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"ctype": {
+		"prefix": "ctype",
+		"body": "\n\\$response.setContentType(\"${1:application/x-web-app-manifest+json}\")${0}\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"st": {
+		"prefix": "st",
+		"body": "\n#stop\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"sysdate": {
+		"prefix": "sysdate",
+		"body": "\n\\$date.getSystemTime()\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	".str": {
+		"prefix": ".str",
+		"body": "\n.toString()\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	".up": {
+		"prefix": ".up",
+		"body": "\n.toUpperCase()\n",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"$": {
+		"prefix": "$",
+		"body": "\\$${1:!}{${2:var}}",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"map": {
+		"prefix": "map",
+		"body": "#set (\\$${1:mapName}= {})\r\n\t$!${1:mapName}.put('${2}','${0}') ##",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"mapPut": {
+		"prefix": "mapPut",
+		"body": "$!${1:mapName}.put('${2}','${0}') ##",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"indexOf": {
+		"prefix": "indexOf",
+		"body": ".indexOf(\\$${1:string})",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"substring": {
+		"prefix": "substring",
+		"body": ".substring(0)",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"size": {
+		"prefix": "size",
+		"body": ".size()",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"formatCurrency": {
+		"prefix": "formatCurrency",
+		"body": "$!number.format('#,##0.00', \\$${1:number}))",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"formatBankAcct": {
+		"prefix": "formatBankAcct",
+		"body": "$!number.formatAccountNumber(\\$${1:number})",
+		"description": "",
+		"scope": "source.velocity"
+	}
+
+}
