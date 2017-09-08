@@ -1,6 +1,6 @@
 # velocity README
 
-- java velocity template support
+- apache velocity template support
 
 ## NOTICE!
 
@@ -8,10 +8,13 @@
 
 ## Features
 
-- java velocity template highlight
+- apache velocity template highlight
+- snippets
+- syntaxes highlight
+- code beautify (Integrated with [prettydiff](http://prettydiff.com/))
 
 ## Known Issues
 
-- formatter
+- lack of range formatter
 
 **Enjoy!**
