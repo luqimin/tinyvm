@@ -1,6 +1,6 @@
 # velocity README
 
-- apache velocity template support
+- Apache Velocity Template Language (VTL) support for Visual Studio Code
 
 ## NOTICE!
 
@@ -15,6 +15,10 @@
 
 ## Known Issues
 
-- lack of range formatter
+- Code beautify need to be optimized
+
+## Feedback
+
+- [Help me improve](https://github.com/luqimin/tinyvm/issues)
 
 **Enjoy!**

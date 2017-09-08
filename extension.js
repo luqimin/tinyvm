@@ -15,11 +15,11 @@ function activate(context) {
     let formatText = vscode.languages.registerDocumentFormattingEditProvider('velocity', {
         provideDocumentFormattingEdits: document => {
             let _data = document.getText();
-            console.log(document);
             let output = prettydiff({
                 source: _data,
                 mode: "beautify",
-                lang: "velocity"
+                lang: "velocity",
+                spaceclose: true
             });
 
             const firstLine = document.lineAt(0);
@@ -28,7 +28,21 @@ function activate(context) {
             return [vscode.TextEdit.replace(rangeFactory(firstLine.range.start, lastLine.range.end), output)];
         }
     });
-    context.subscriptions.push(formatText);
+    let formatRange = vscode.languages.registerDocumentRangeFormattingEditProvider('velocity', {
+        provideDocumentRangeFormattingEdits: (document, range) => {
+            let _data = document.getText(range);
+            let fixedStart, fixedEnd;
+            let output = prettydiff({
+                source: _data,
+                mode: "beautify",
+                lang: "velocity",
+                spaceclose: true
+            });
+
+            return [vscode.TextEdit.replace(rangeFactory(range.start, range.end), output)];
+        }
+    });
+    context.subscriptions.push(formatText, formatRange);
 }
 exports.activate = activate;
 

@@ -1,8 +1,8 @@
 {
     "name": "velocity",
-    "displayName": "tinyVM",
+    "displayName": "Apache Velocity",
     "description": "The Apache Velocity support for Visual Studio Code",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "publisher": "luqimin",
     "repository": {
         "type": "git",
@@ -24,10 +24,11 @@
                 "id": "velocity",
                 "aliases": [
                     "Velocity",
-                    "velocity"
+                    "vtl"
                 ],
                 "extensions": [
-                    ".vm"
+                    ".vm",
+                    ".vtl"
                 ],
                 "configuration": "./language-configuration.json"
             }
