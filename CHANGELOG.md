@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.5.0 | 2017.09.14
+- add some snippets
+
 ## 0.3.0 | 2017.09.08
 - add range format
 - add some snippets

@@ -23,9 +23,27 @@
 		"description": "",
 		"scope": "source.velocity"
 	},
+	"else": {
+		"prefix": "#else",
+		"body": "#else\r\n\t${0:output}",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"elseif": {
+		"prefix": "#elseif",
+		"body": "#elseif(${0:condition})",
+		"description": "",
+		"scope": "source.velocity"
+	},
 	"foreach": {
 		"prefix": "#foreach",
 		"body": "#foreach(${1:ref} in ${2:Array})\r\n\t${0:statement}\r\n#end",
+		"description": "",
+		"scope": "source.velocity"
+	},
+	"end": {
+		"prefix": "#end",
+		"body": "#end",
 		"description": "",
 		"scope": "source.velocity"
 	},

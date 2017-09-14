@@ -63,7 +63,8 @@
 			<key>match</key>
 			<string>(\#\#).*$\n?</string>
 			<key>name</key>
-			<string>source.velocity.embedded</string>
+			<!-- <string>source.velocity.embedded</string> -->
+			<string>comment.velocity.embedded</string>
 		</dict>
 		<dict>
 			<key>begin</key>
