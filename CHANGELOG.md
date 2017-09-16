@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.6.0 | 2017.09.16
+- fix self-close tags(e.g. <input />) beautify bug
+
 ## 0.5.0 | 2017.09.14
 - add some snippets
 

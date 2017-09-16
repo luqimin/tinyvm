@@ -19,7 +19,8 @@ function activate(context) {
                 source: _data,
                 mode: "beautify",
                 lang: "velocity",
-                spaceclose: true
+                html: true,
+                commline: false,
             });
 
             const firstLine = document.lineAt(0);
@@ -36,7 +37,8 @@ function activate(context) {
                 source: _data,
                 mode: "beautify",
                 lang: "velocity",
-                spaceclose: true
+                html: true,
+                commline: false,
             });
 
             return [vscode.TextEdit.replace(rangeFactory(range.start, range.end), output)];
