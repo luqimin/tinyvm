@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.7.0 | 2017.10.10
+- minor bug fix
+
 ## 0.6.0 | 2017.09.16
 - fix self-close tags(e.g. input/img/meta) beautify bug
 

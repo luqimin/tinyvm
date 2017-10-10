@@ -2,7 +2,7 @@
     "name": "velocity",
     "displayName": "Apache Velocity",
     "description": "The Apache Velocity support for Visual Studio Code",
-    "version": "0.6.1",
+    "version": "0.7.0",
     "publisher": "luqimin",
     "repository": {
         "type": "git",
