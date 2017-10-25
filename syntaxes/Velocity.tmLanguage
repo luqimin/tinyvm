@@ -63,8 +63,7 @@
 			<key>match</key>
 			<string>(\#\#).*$\n?</string>
 			<key>name</key>
-			<!-- <string>source.velocity.embedded</string> -->
-			<string>comment.velocity.embedded</string>
+			<string>comment.line.double-number-sign</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -530,8 +529,59 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>applyEndPatternLast</key>
-					<integer>1</integer>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.function-call.method.with-arguments.velocity</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.readwrite.velocity</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.velocity</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.velocity</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.parameters.velocity</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.velocity</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.function.velocity</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.begin.velocity</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)
+						 ((\$ \!?   ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
+							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)* ) 
+							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (\(\s*\))
+					</string>
+					<key>name</key>
+					<string>source.velocity.embedded</string>
+				</dict>
+				<dict>
 					<key>begin</key>
 					<string>(?x)
 						 ((\$ \!?   ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
@@ -604,71 +654,24 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-						 ((\$ \!? \{) [a-zA-Z][-a-zA-Z0-9_]* \b) 
-							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)* ) 
-							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (\()\s* 
+						 \$ \!? \{
 					</string>
-					<key>beginCaptures</key>
+					<key>captures</key>
 					<dict>
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>meta.function-call.method.with-arguments.velocity</string>
-						</dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.variable.velocity</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>variable.parameter.velocity</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.separator.parameters.velocity</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.velocity</string>
-						</dict>
-						<key>6</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.function.velocity</string>
-						</dict>
-						<key>7</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.arguments.begin.velocity</string>
+							<string>punctuation.section.embedded.begin.velocity</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\s*(\))(\s*(\}))</string>
+					<string>\}</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.arguments.end.velocity</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.readwrite.velocity</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.variable.end.velocity</string>
+							<string>punctuation.section.embedded.end.velocity</string>
 						</dict>
 					</dict>
 					<key>name</key>
@@ -676,8 +679,81 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>include</key>
-							<string>#function-arguments</string>
+							<key>captures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>meta.function-call.method.with-arguments.velocity</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.function.velocity</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.arguments.velocity</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>(\w+)(\(\))</string>
+							<key>name</key>
+							<string>variable.other.readwrite.velocity</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(\w+)(\()</string>
+							<key>captures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>meta.function-call.method.with-arguments.velocity</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.function.velocity</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.arguments.begin.velocity</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>\)</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.arguments.end.velocity</string>
+								</dict>
+							</dict>
+							<key>name</key>
+							<string>variable.other.readwrite.velocity</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#function-arguments</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\w+</string>
+							<key>name</key>
+							<string>variable.other.readwrite.velocity</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\.</string>
+							<key>name</key>
+							<string>punctuation.separator.parameters.velocity</string>
 						</dict>
 					</array>
 				</dict>
@@ -769,7 +845,7 @@
 					<key>match</key>
 					<string>\b(set|parse|cparse|config|include|cinclude)\b</string>
 					<key>name</key>
-					<string>keyword.other.velocity</string>
+					<string>keyword.velocity</string>
 				</dict>
 			</array>
 		</dict>
