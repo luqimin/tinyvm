@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.7.1 | 2017.10.10
+- fix [#1](https://github.com/luqimin/tinyvm/issues/1)
+
 ## 0.7.0 | 2017.10.10
 - minor bug fix
 
