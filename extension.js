@@ -1,18 +1,18 @@
 const vscode = require('vscode');
 const http = require('http');
 const fs = require('fs');
-const prettydiff = require("./lib/prettydiff");
+const prettydiff = require('./lib/prettydiff');
 
 let formatOptions = {
-    mode: "beautify",
+    mode: 'beautify',
     html: true,
-    lang: "velocity",
+    lang: 'velocity',
     apacheVelocity: true,
     cssinsertlines: true,
     wrap: 100,
-    comments: "indent",
+    comments: 'indent',
     commline: false,
-    style: "indent",
+    style: 'indent',
 };
 
 function positionFactory(line, char) {
@@ -25,28 +25,38 @@ function rangeFactory(start, end) {
 
 function activate(context) {
     let formatText = vscode.languages.registerDocumentFormattingEditProvider('velocity', {
-        provideDocumentFormattingEdits: document => {
+        provideDocumentFormattingEdits: (document) => {
             let _data = document.getText();
-            let output = prettydiff(Object.assign({
-                source: _data
-            }, formatOptions));
+            let output = prettydiff(
+                Object.assign(
+                    {
+                        source: _data,
+                    },
+                    formatOptions
+                )
+            );
 
             const firstLine = document.lineAt(0);
             const lastLine = document.lineAt(document.lineCount - 1);
 
             return [vscode.TextEdit.replace(rangeFactory(firstLine.range.start, lastLine.range.end), output)];
-        }
+        },
     });
     let formatRange = vscode.languages.registerDocumentRangeFormattingEditProvider('velocity', {
         provideDocumentRangeFormattingEdits: (document, range) => {
             let _data = document.getText(range);
             let fixedStart, fixedEnd;
-            let output = prettydiff(Object.assign({
-                source: _data
-            }, formatOptions));
+            let output = prettydiff(
+                Object.assign(
+                    {
+                        source: _data,
+                    },
+                    formatOptions
+                )
+            );
 
             return [vscode.TextEdit.replace(rangeFactory(range.start, range.end), output)];
-        }
+        },
     });
     context.subscriptions.push(formatText, formatRange);
 }

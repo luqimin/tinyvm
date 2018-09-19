@@ -13,7 +13,7 @@
     },
     "icon": "icon.png",
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
     "activationEvents": [
         "onLanguage:velocity"

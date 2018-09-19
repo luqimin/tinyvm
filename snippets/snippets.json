@@ -1,212 +1,212 @@
 {
-	"set": {
-		"prefix": "#set",
-		"body": "#set(\\$${1:ref} = ${0:arg})",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"if": {
-		"prefix": "#if",
-		"body": "#if(${1:condition})\r\n\t${0:output}\r\n#end",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"ifelse": {
-		"prefix": "#ifelse",
-		"body": "#if(${1:condition})\r\n\t${2:output}\r\n#else\r\n\t${0:output}\r\n#end",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"ifelseif": {
-		"prefix": "#ifelseif",
-		"body": "#if(${1:condition})\r\n\t${2:output}\r\n#elseif(${3:condition})\r\n\t${4:output}\r\n#else\r\n\t${0:output}\r\n#end",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"else": {
-		"prefix": "#else",
-		"body": "#else\r\n\t${0:output}",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"elseif": {
-		"prefix": "#elseif",
-		"body": "#elseif(${0:condition})",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"foreach": {
-		"prefix": "#foreach",
-		"body": "#foreach(${1:ref} in ${2:Array})\r\n\t${0:statement}\r\n#end",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"end": {
-		"prefix": "#end",
-		"body": "#end",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"include": {
-		"prefix": "#include",
-		"body": "#include(\"${0:url}\")",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"parse": {
-		"prefix": "#parse",
-		"body": "#parse(\"${0:url}\")",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"define": {
-		"prefix": "#define",
-		"body": "#define(${1:ref})\r\n\t${0}\r\n#end",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"macro": {
-		"prefix": "#macro",
-		"body": "#macro(${1:vmname} ${2:arg1} = ${3:def1})\r\n\t${0:VM VTL code}\r\n#end",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"count": {
-		"prefix": "$velocityCount",
-		"body": "\n\\$velocityCount\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"stop": {
-		"prefix": "#stop",
-		"body": "\n#stop\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"break": {
-		"prefix": "#break",
-		"body": "\n#break\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"evaluate": {
-		"prefix": "#evaluate",
-		"body": "#evaluate\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"exist": {
-		"prefix": "exist",
-		"body": "\\$include.exists( \"${0:filepath}\" )",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"param": {
-		"prefix": "param",
-		"body": "\\$!{request.getParameter( \"${1:parameter name}\" )}",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"vm": {
-		"prefix": "vm",
-		"body": "#!vm;utf-8",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"host": {
-		"prefix": "host",
-		"body": "\\$!{link.getHost()}",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"ept": {
-		"prefix": "ept",
-		"body": "\nisEmpty()\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"isfeature": {
-		"prefix": "isfeature",
-		"body": "\n\\$_userAgent.isFeaturePhone()\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"issmart": {
-		"prefix": "issmart",
-		"body": "\n\\$_userAgent.isSmartPhone()\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"isweb": {
-		"prefix": "isweb",
-		"body": "\n\\$_userAgent.isWeb()\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"request": {
-		"prefix": "request",
-		"body": "\n\\$_json.request( ${0:url} )\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"jstos": {
-		"prefix": "jstos",
-		"body": "\n\\$_json.toString( ${0:obj} )\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	".ks": {
-		"prefix": ".keySet",
-		"body": "\n.keySet()\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"redi": {
-		"prefix": "redi",
-		"body": "\n\\$response.setStatus(${1:301})\n\\$response.sendRedirect(\"${2:\\$${0:var}}\")\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"ctype": {
-		"prefix": "ctype",
-		"body": "\n\\$response.setContentType(\"${1:application/x-web-app-manifest+json}\")${0}\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	"sysdate": {
-		"prefix": "sysdate",
-		"body": "\n\\$date.getSystemTime()\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	".toString": {
-		"prefix": ".toString",
-		"body": "\n.toString()\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	".toUpperCase": {
-		"prefix": ".toUpperCase",
-		"body": "\n.toUpperCase()\n",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	".indexOf": {
-		"prefix": ".indexOf",
-		"body": ".indexOf(\\$${1:string})",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	".substring": {
-		"prefix": ".substring",
-		"body": ".substring(0)",
-		"description": "",
-		"scope": "source.velocity"
-	},
-	".size": {
-		"prefix": ".size",
-		"body": ".size()",
-		"description": "",
-		"scope": "source.velocity"
-	}
+    "set": {
+        "prefix": "#set",
+        "body": "#set(\\$${1:ref} = ${0:arg})",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "if": {
+        "prefix": "#if",
+        "body": "#if(${1:condition})\r\n\t${0:output}\r\n#end",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "ifelse": {
+        "prefix": "#ifelse",
+        "body": "#if(${1:condition})\r\n\t${2:output}\r\n#else\r\n\t${0:output}\r\n#end",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "ifelseif": {
+        "prefix": "#ifelseif",
+        "body": "#if(${1:condition})\r\n\t${2:output}\r\n#elseif(${3:condition})\r\n\t${4:output}\r\n#else\r\n\t${0:output}\r\n#end",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "else": {
+        "prefix": "#else",
+        "body": "#else\r\n\t${0:output}",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "elseif": {
+        "prefix": "#elseif",
+        "body": "#elseif(${0:condition})",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "foreach": {
+        "prefix": "#foreach",
+        "body": "#foreach(${1:ref} in ${2:Array})\r\n\t${0:statement}\r\n#end",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "end": {
+        "prefix": "#end",
+        "body": "#end",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "include": {
+        "prefix": "#include",
+        "body": "#include(\"${0:url}\")",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "parse": {
+        "prefix": "#parse",
+        "body": "#parse(\"${0:url}\")",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "define": {
+        "prefix": "#define",
+        "body": "#define(${1:ref})\r\n\t${0}\r\n#end",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "macro": {
+        "prefix": "#macro",
+        "body": "#macro(${1:vmname} ${2:arg1} = ${3:def1})\r\n\t${0:VM VTL code}\r\n#end",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "count": {
+        "prefix": "$velocityCount",
+        "body": "\n\\$velocityCount\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "stop": {
+        "prefix": "#stop",
+        "body": "\n#stop\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "break": {
+        "prefix": "#break",
+        "body": "\n#break\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "evaluate": {
+        "prefix": "#evaluate",
+        "body": "#evaluate\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "exist": {
+        "prefix": "exist",
+        "body": "\\$include.exists( \"${0:filepath}\" )",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "param": {
+        "prefix": "param",
+        "body": "\\$!{request.getParameter( \"${1:parameter name}\" )}",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "vm": {
+        "prefix": "vm",
+        "body": "#!vm;utf-8",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "host": {
+        "prefix": "host",
+        "body": "\\$!{link.getHost()}",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "ept": {
+        "prefix": "ept",
+        "body": "\nisEmpty()\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "isfeature": {
+        "prefix": "isfeature",
+        "body": "\n\\$_userAgent.isFeaturePhone()\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "issmart": {
+        "prefix": "issmart",
+        "body": "\n\\$_userAgent.isSmartPhone()\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "isweb": {
+        "prefix": "isweb",
+        "body": "\n\\$_userAgent.isWeb()\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "request": {
+        "prefix": "request",
+        "body": "\n\\$_json.request( ${0:url} )\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "jstos": {
+        "prefix": "jstos",
+        "body": "\n\\$_json.toString( ${0:obj} )\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    ".ks": {
+        "prefix": ".keySet",
+        "body": "\n.keySet()\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "redi": {
+        "prefix": "redi",
+        "body": "\n\\$response.setStatus(${1:301})\n\\$response.sendRedirect(\"${2:\\$${0:var}}\")\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "ctype": {
+        "prefix": "ctype",
+        "body": "\n\\$response.setContentType(\"${1:application/x-web-app-manifest+json}\")${0}\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    "sysdate": {
+        "prefix": "sysdate",
+        "body": "\n\\$date.getSystemTime()\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    ".toString": {
+        "prefix": ".toString",
+        "body": "\n.toString()\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    ".toUpperCase": {
+        "prefix": ".toUpperCase",
+        "body": "\n.toUpperCase()\n",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    ".indexOf": {
+        "prefix": ".indexOf",
+        "body": ".indexOf(\\$${1:string})",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    ".substring": {
+        "prefix": ".substring",
+        "body": ".substring(0)",
+        "description": "",
+        "scope": "source.velocity"
+    },
+    ".size": {
+        "prefix": ".size",
+        "body": ".size()",
+        "description": "",
+        "scope": "source.velocity"
+    }
 }
